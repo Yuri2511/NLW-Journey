@@ -1,17 +1,22 @@
 const activity = {
   name: "Lunch",
   date: new Date("2024-07-08T10:00:00"),
-  completed: false,
+  completed: true,
 };
+
 const activities = [
   activity,
   {
-    name: 'Academia em grupo',
+    name: 'Group Workout',
     date: new Date("2024-07-09T12:00:00"),
     completed: false
+  },
+  {
+    name: 'Gaming session',
+    date: new Date("2024-07-09T19:00:00"),
+    completed: true
   }
-]
-
+];
 
 const createActivityItem = (activity) => {
   let input = '<input type="checkbox" ';
@@ -31,4 +36,10 @@ const createActivityItem = (activity) => {
 };
 
 const section = document.querySelector('section');
-section.innerHTML = createActivityItem(activity);
+let content = '';
+
+for (let activity of activities) {
+  content += createActivityItem(activity);
+}
+
+section.innerHTML = content;
