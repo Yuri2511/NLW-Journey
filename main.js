@@ -3,6 +3,15 @@ const activity = {
   date: new Date("2024-07-08T10:00:00"),
   completed: false,
 };
+const activities = [
+  activity,
+  {
+    name: 'Academia em grupo',
+    date: new Date("2024-07-09T12:00:00"),
+    completed: false
+  }
+]
+
 
 const createActivityItem = (activity) => {
   let input = '<input type="checkbox" ';
