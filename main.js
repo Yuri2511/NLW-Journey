@@ -1,13 +1,13 @@
-const atividade = {
-  nome: "Almoço",
-  data: new Date("2024-07-08T10:00:00"),
-  finalizada: false,
+const activity = {
+  name: "Lunch",
+  date: new Date("2024-07-08T10:00:00"),
+  completed: false,
 };
 
-const criarItemDeAtividade = (atividade) => {
+const createActivityItem = (activity) => {
   let input = '<input type="checkbox" ';
 
-  if (atividade.finalizada) {
+  if (activity.completed) {
     input += 'checked';
   }
 
@@ -16,10 +16,10 @@ const criarItemDeAtividade = (atividade) => {
   return `
   <div>
     ${input}
-    <span>${atividade.nome}</span>
-    <time>${atividade.data.toLocaleString()}</time>
+    <span>${activity.name}</span>
+    <time>${activity.date.toLocaleString()}</time>
   </div>`;
 };
 
 const section = document.querySelector('section');
-section.innerHTML = criarItemDeAtividade(atividade);
+section.innerHTML = createActivityItem(activity);
